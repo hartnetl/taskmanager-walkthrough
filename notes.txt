@@ -1,0 +1,5 @@
+In this example, the task to category ratio is one to many.
+All our tasks need a category.
+One category can be applied to many different tasks, but one task cannot have many categories.
+
+If we were to apply many categories to a single task, this would be known as a many-to-many relationship.
