@@ -3,3 +3,12 @@ All our tasks need a category.
 One category can be applied to many different tasks, but one task cannot have many categories.
 
 If we were to apply many categories to a single task, this would be known as a many-to-many relationship.
+
+
+NOTE
+IF YOU'RE GETTING AN ERROR WHEN RUNNING THE APP, ENSURE YOU'VE RUN POSTGRES BEFORE RUNNING THE PY FILE
+
+    set_pg
+    psql -d taskmanager
+    \q
+    python3 run.py
