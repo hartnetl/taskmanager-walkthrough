@@ -14,6 +14,7 @@ def categories():
 
 
 @app.route("/add_category", methods=["GET", "POST"])
+# NB: IN THE REAL WORLD THIS WOULD HAVE SOME DEFENSIVE PROGRAMMING AND ERROR HANDLING
 def add_category():
     # This sets the post method to allow users to add category to the database
     if request.method == "POST":
