@@ -45,3 +45,13 @@ def edit_category(category_id):
         db.session.commit()
         return redirect(url_for("categories"))
     return render_template("edit_category.html", category=category)
+
+# Again this needs to know which file to delete so it is passed the category id as an integer and into the function itself
+# We can copy a lot from edit above
+@app.route("/delete_category/<int:category_id>")
+def delete_category(category_id):
+    category = Category.query.get_or_404(category_id)
+    # When we find the file, we delete it and commit the changes
+    db.session.delete(category)
+    db.session.commit()
+    return redirect(url_for("categories"))
