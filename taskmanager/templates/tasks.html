@@ -20,7 +20,7 @@
     <li>
         <div class="collapsible-header blue-grey-text text-darken-1 amber lighten-2">
             <i class="fas fa-caret-down"></i>
-            <strong>{{task.task_name}}</strong> : {{ task.due_date }}
+            <strong>{{task.task_name}}</strong> : {{ task.due_date.strftime("%d %B, %Y")}}
             {% if task.is_urgent == True %}
             <i class="fas fa-exclamation-circle blue-grey-text test-darken-1"></i>
             {% endif %}
