@@ -8,7 +8,11 @@ if os.path.exists("env.py"):
 # Create an instance of the imported Flask class
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
+
+if os.environ.get("DEVELOPMENT") == TRUE:
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
+else:
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
 
 # Create an instand of the imported alchemy class
 db = SQLAlchemy(app)
