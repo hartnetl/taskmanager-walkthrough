@@ -11,4 +11,20 @@
     </div>
 </div>
 
+<div class="row">
+    {% for task in tasks %}
+    <div class="col s12 m6 l3">
+        <div class="card amber lighten-4 center-align">
+            <div class="card-content blue-grey-text text-darken-1">
+                <span class="card-title">{{ task.task_name }}</span>
+            </div>
+            <div class="card-action">
+                <a href="#" class="btn green accent-4">Edit</a>
+                <a href="#" class="btn red">Delete</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
 {% endblock %}
