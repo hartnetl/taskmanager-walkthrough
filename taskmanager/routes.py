@@ -10,7 +10,7 @@ def home():
 
 @app.route("/categories")
 def categories():
-    # This queries the imported category, retrieves all records and sorts them by name. the all MUST go at the end.
+    # This queries the imported category, retrieves all records and sorts them by name when displayed. the all MUST go at the end.
     # list() converts the cursor object to a python list
     categories = list(Category.query.order_by(Category.category_name).all())
     # categories=categories. The first one is the variable name we can use in the categories html. The second one is the variable in the line above this.
