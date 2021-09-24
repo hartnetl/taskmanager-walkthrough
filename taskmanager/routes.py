@@ -5,7 +5,7 @@ from taskmanager.models import Category, Task
 
 @app.route("/")
 def home():
-    tasks = list(Task.query.order_by(Task.is_urgent).all())
+    tasks = list(Task.query.order_by(Task.task_name).all())
     return render_template("tasks.html", tasks=tasks)
 
 ##### CATEGORIES #####

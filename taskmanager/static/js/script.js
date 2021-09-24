@@ -18,5 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // category dropdown
     let dDown = document.querySelectorAll('select');
     M.FormSelect.init(dDown);
+
+    // collapsible tasks
+    let collapse = document.querySelectorAll('.collapsible');
+    M.Collapsible.init(collapse);
   });
 
