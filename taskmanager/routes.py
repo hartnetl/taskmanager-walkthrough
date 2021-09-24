@@ -7,6 +7,7 @@ from taskmanager.models import Category, Task
 def home():
     return render_template("tasks.html")
 
+##### CATEGORIES #####
 
 @app.route("/categories")
 def categories():
@@ -55,3 +56,31 @@ def delete_category(category_id):
     db.session.delete(category)
     db.session.commit()
     return redirect(url_for("categories"))
+
+
+##### TASKS #####
+
+@app.route("/add_task", methods=["GET", "POST"])
+def add_task():
+    # Each task needs to be assigned a category
+    # Here we're calling an ordered list of existing categories, stolen from categories above
+    categories = list(Category.query.order_by(Category.category_name).all())
+    if request.method == "POST":
+        # these are taken from the models.py schema for tasks
+        task = Task(
+            # name will be as entered in name field
+            task_name=request.form.get("task_name"),
+            # description will be as entered in description field
+            task_description=request.form.get("task_description"),
+            # if urgent is clicked it's urgent, else it's false by default
+            is_urgent=bool(True if request.form.get("is_urgent") else False),
+            # date set by dtae box
+            due_date=request.form.get("due_date"),
+            # this will be a dropdown list to choose from exisiting categories
+            category_id=request.form.get("category_id")
+        )
+        db.session.add(task)
+        db.session.commit()
+        return redirect(url_for("home"))
+        # we must give them the add_task page if they're not posting, and remember to give it categories to access the existing ones
+    return render_template("add_task.html", categories=categories)
