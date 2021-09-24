@@ -14,5 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
       autoClose: true,
       i18n: {done: "Select"}
     });
+
+    // category dropdown
+    let dDown = document.querySelectorAll('select');
+    M.FormSelect.init(dDown);
   });
 
