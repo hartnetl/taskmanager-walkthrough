@@ -32,6 +32,10 @@ def add_category():
         return redirect(url_for("categories"))
     return render_template("add_category.html")
 
-@app.route("/edit_category", methods=["GET", "POST"])
-def edit_category():
-    return render_template("edit_category.html")
+@app.route("/edit_category/<int:category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    # If we run the file with the router as is, we get a "category undefined" error.
+    # We need to create the category variable the template is expecting
+    # This variable searches the database for that category id, and returns a 404 error if it does not exist
+    category = Category.query.get_or_404(category_id)
+    return render_template("edit_category.html", category=category)
