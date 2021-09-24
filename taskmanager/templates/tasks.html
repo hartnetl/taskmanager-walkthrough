@@ -41,7 +41,7 @@
                             <p>This cannot be undone.</p>
                         </div>
                         <div class="modal-footer">
-                            <a href=" " class="btn red">Delete</a>
+                            <a href="{{ url_for('delete_task', task_id=task.id) }}" class="btn red">Delete</a>
                             <a href="{{ url_for('home') }}" class="btn green accent-4">Cancel</a>
                         </div>
                     </div>
