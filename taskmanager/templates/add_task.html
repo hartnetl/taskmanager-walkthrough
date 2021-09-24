@@ -5,13 +5,37 @@
 
 <div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('add_task') }}">
-        <!-- task name-->
+        <!-- task_name-->
         <div class="row">
             <div class="input-field col s12">
                 <!--Add icon before the box (use prefix class)-->
-                <i class="fas fa-folder-open prefix grey-text text-darken-2"></i>
-                <input id="task_name" name="task_name" minlength="3" maxlength="25" type="text" class="validate" required>
-                <label for="task_name">task Name</label>
+                <i class="fas fa-pencil-alt prefix grey-text text-darken-2"></i>
+                <input id="task_name" name="task_name" minlength="3" maxlength="25" type="text" class="validate"
+                    required>
+                <label for="task_name">Task Name</label>
+            </div>
+        </div>
+
+        <!-- task_description-->
+        <div class="row">
+            <div class="input-field col s12">
+                <!--Add icon before the box (use prefix class)-->
+                <i class="fas fa-align-left prefix grey-text text-darken-2"></i>
+                <textarea id="task_description" name="task_description" minlength="5" maxlength="200"
+                    class="materialize-textarea" type="text" class="validate" required></textarea>
+                <label for="task_description">Task Description</label>
+            </div>
+        </div>
+
+        <!-- due_date-->
+        <div class="row">
+            <div class="input-field col s12">
+                <!--Add icon before the box (use prefix class)-->
+                <i class="fas fa-calendar-alt prefix grey-text text-darken-2"></i>
+                <!-- Datepicker is important here, and needs to be initialized with JS-->
+                <input id="due_date" name="due_date" class="datepicker validate"
+                    type="text" class="validate" required>
+                <label for="due_date">Due Date</label>
             </div>
         </div>
 
@@ -24,7 +48,7 @@
                 </button>
             </div>
         </div>
-        
+
     </form>
 </div>
 

@@ -6,5 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // modal initialization
     let delModal = document.querySelectorAll('.modal');
     M.Modal.init(delModal);
+
+    // datepicker initialization
+    let datepicker = document.querySelectorAll('.datepicker');
+    M.Datepicker.init(datepicker, {
+      format: "dd mmmm, yyyy",
+      autoClose: true,
+      i18n: {done: "Select"}
+    });
   });
 
