@@ -19,7 +19,7 @@
         <!-- task_description-->
         <div class="row">
             <div class="input-field col s12">
-                <!--Add icon before the box (use prefix class)-->
+
                 <i class="fas fa-align-left prefix grey-text text-darken-2"></i>
                 <textarea id="task_description" name="task_description" minlength="5" maxlength="200"
                     class="materialize-textarea" type="text" class="validate" required></textarea>
@@ -30,12 +30,25 @@
         <!-- due_date-->
         <div class="row">
             <div class="input-field col s12">
-                <!--Add icon before the box (use prefix class)-->
+
                 <i class="fas fa-calendar-alt prefix grey-text text-darken-2"></i>
                 <!-- Datepicker is important here, and needs to be initialized with JS-->
-                <input id="due_date" name="due_date" class="datepicker validate"
-                    type="text" class="validate" required>
+                <input id="due_date" name="due_date" class="datepicker validate" type="text" class="validate" required>
                 <label for="due_date">Due Date</label>
+            </div>
+        </div>
+
+        <!-- is_urgent -->
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="switch">
+                    <i class="fas fa-exclamation-circle prefix grey-text text-darken-2"></i>
+                    <label for="is_urgent">
+                        <input id="is_urgent" name="is_urgent" type="checkbox">
+                        <span class="lever"></span>
+                        Is Urgent
+                    </label>
+                </div>
             </div>
         </div>
 
