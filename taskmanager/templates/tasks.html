@@ -16,7 +16,7 @@
 <!-- Task collapse card-->
 
 <ul class="collapsible">
-    {% for task in tasks %}
+    {% for task in tasks | sort(attribute="due_date") %}
     <li>
         <div class="collapsible-header blue-grey-text text-darken-1 amber lighten-2">
             <i class="fas fa-caret-down"></i>
